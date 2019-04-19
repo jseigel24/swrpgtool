@@ -1,0 +1,22 @@
+##Add PostGres Container
+##docker run --name swrpg-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+# Use postgres/example user/password credentials
+#PGDATA env var is the directory data gets stored in
+#/docker-entrypoint-initdb.d
+
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: swrpg
+      POSTGRES_DB: swrpg
+    ports:
+      - 5432:5432
+
+
+##Add Web Services Container
+
