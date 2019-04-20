@@ -11,12 +11,19 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: example
+      POSTGRES_PASSWORD: swrpg
       POSTGRES_USER: swrpg
       POSTGRES_DB: swrpg
     ports:
       - 5432:5432
-
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: jseigel24@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: swrpg
+    ports:
+      - 2080:2080
 
 ##Add Web Services Container
 
